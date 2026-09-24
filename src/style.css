@@ -1,0 +1,150 @@
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/Lora-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+  --body-bg: #010721;
+  --accent: #f7d088;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background: var(--body-bg);
+  color: #fff;
+  font-family: "Lato", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero {
+  position: relative;
+  height: 700px;
+  padding: 160px 0 40px;
+  background: radial-gradient(circle at top, #103f69, #103f694d 32%, #103f6900 60%, #010721);
+  background-position-y: -100px;
+  background-repeat: no-repeat;
+}
+
+.hero::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: url("/assets/hero-overlay.webp") center / cover;
+  mix-blend-mode: screen;
+  opacity: 0.28;
+  pointer-events: none;
+}
+
+.video-container {
+  position: relative;
+}
+
+/* Keep the reference's 360px media height, including on small screens. */
+.hero-media {
+  position: relative;
+  width: 480px;
+  max-width: 100%;
+  height: 360px;
+  margin: 0 auto;
+}
+
+.hero-media img,
+.hero-media video {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: plus-lighter;
+  pointer-events: none;
+}
+
+.hero-media img {
+  object-fit: fill;
+}
+
+.hero-media video {
+  visibility: hidden;
+  object-fit: contain;
+}
+
+.hero-media.is-playing video {
+  visibility: visible;
+}
+
+.hero-media.is-playing img {
+  visibility: hidden;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.overlay-text h1,
+.overlay-text h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+.overlay-text h1 {
+  letter-spacing: 4px;
+}
+
+.name {
+  display: block;
+  margin: 6px 0 10px;
+  font-family: "Lora", serif;
+  font-size: 64px;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.overlay-text h2 {
+  color: var(--accent);
+  letter-spacing: 1px;
+}
+
+@media (max-width: 540px) {
+  .overlay-text h1,
+  .overlay-text h2 {
+    font-size: 16px;
+  }
+
+  .name {
+    font-size: 48px;
+  }
+}

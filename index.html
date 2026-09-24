@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#010721" />
+    <meta name="description" content="Web design and development. Connecting your brand with the world." />
+    <title>Ryan Deming — Web Design & Development</title>
+    <link rel="icon" href="data:," />
+    <link rel="preload" href="/assets/fonts/Lora-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/background.webp" as="image" type="image/webp" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body>
+    <main>
+      <section id="home" class="hero" aria-labelledby="hero-title">
+        <div class="video-container">
+          <div class="hero-media" aria-hidden="true">
+            <img id="video-placeholder" src="/assets/background.webp" alt="" width="480" height="360" fetchpriority="high" />
+            <video id="background-video" muted loop playsinline disablepictureinpicture preload="none" tabindex="-1">
+              <source src="/assets/background.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="overlay-text">
+            <h1 id="hero-title">The Future of Work</h1>
+            <span class="name">Kerax</span>
+            <h2>Everyone doing what they do best, together.</h2>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
